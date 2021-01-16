@@ -35,8 +35,7 @@ public class RepeatedMessagesModule implements RoleplayBotModule {
 	@Override
 	public void unload(Guild guild) {
 		if(managers.containsKey(guild)) {
-			RepeatedMessagesManager manager = managers.get(guild);
-
+			managers.remove(guild);
 		}
 	}
 }
