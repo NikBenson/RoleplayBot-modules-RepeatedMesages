@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RepeatedMessagesModule implements RoleplayBotModule {
-	private Map<Guild, RepeatedMessagesManager> managers = new HashMap<>();
+	private final Map<Guild, RepeatedMessagesManager> managers = new HashMap<>();
 
 	@Override
 	public boolean isActive(Guild guild) {
@@ -34,8 +34,6 @@ public class RepeatedMessagesModule implements RoleplayBotModule {
 
 	@Override
 	public void unload(Guild guild) {
-		if(managers.containsKey(guild)) {
-			managers.remove(guild);
-		}
+		managers.remove(guild);
 	}
 }
