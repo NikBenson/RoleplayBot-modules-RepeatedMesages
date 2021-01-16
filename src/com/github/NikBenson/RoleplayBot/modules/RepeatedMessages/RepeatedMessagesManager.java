@@ -1,6 +1,7 @@
 package com.github.NikBenson.RoleplayBot.modules.RepeatedMessages;
 
 import com.github.NikBenson.RoleplayBot.commands.context.Context;
+import com.github.NikBenson.RoleplayBot.commands.context.GuildContext;
 import com.github.NikBenson.RoleplayBot.configurations.ConfigurationManager;
 import com.github.NikBenson.RoleplayBot.configurations.ConfigurationPaths;
 import com.github.NikBenson.RoleplayBot.configurations.JSONConfigured;
@@ -67,7 +68,7 @@ public class RepeatedMessagesManager implements JSONConfigured {
 			values[i] = (String) valuesJSON.get(i);
 		}
 
-		MessageFormatter<Context> messageFormatter = new MessageFormatter<>(message, values);
+		MessageFormatter<GuildContext> messageFormatter = new MessageFormatter<>(message, values);
 		repeatedMessages.add(new RepeatedMessage(channel, messageFormatter, startAt, timeDelta));
 	}
 }

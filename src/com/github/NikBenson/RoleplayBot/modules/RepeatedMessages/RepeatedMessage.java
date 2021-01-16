@@ -1,7 +1,8 @@
 package com.github.NikBenson.RoleplayBot.modules.RepeatedMessages;
 
-import com.github.NikBenson.RoleplayBot.commands.context.Context;
+import com.github.NikBenson.RoleplayBot.commands.context.GuildContext;
 import com.github.NikBenson.RoleplayBot.messages.MessageFormatter;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
 import org.jetbrains.annotations.NotNull;
 
@@ -10,15 +11,17 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class RepeatedMessage extends TimerTask {
+	private final Guild GUILD;
 	private final TextChannel channel;
-	private final MessageFormatter<Context> message;
+	private final MessageFormatter<GuildContext> message;
 
 	private final Date startingTime;
 	private final long period;
 
 	private final Timer timer;
 
-	public RepeatedMessage(@NotNull TextChannel channel, @NotNull MessageFormatter<Context> message, @NotNull Date startingTime, @NotNull long period) {
+	public RepeatedMessage(@NotNull TextChannel channel, @NotNull MessageFormatter<GuildContext> message, @NotNull Date startingTime, @NotNull long period) {
+		GUILD = channel.getGuild();
 		this.channel = channel;
 		this.message = message;
 		this.startingTime = startingTime;
@@ -42,6 +45,6 @@ public class RepeatedMessage extends TimerTask {
 
 	@Override
 	public void run() {
-		channel.sendMessage(message.createMessage(new Context())).queue();
+		channel.sendMessage(message.createMessage(new GuildContext(GUILD))).queue();
 	}
 }
