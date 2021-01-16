@@ -7,8 +7,13 @@ import net.dv8tion.jda.api.entities.Guild;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RepeatedMessagesModule extends RoleplayBotModule {
+public class RepeatedMessagesModule implements RoleplayBotModule {
 	private Map<Guild, RepeatedMessagesManager> managers = new HashMap<>();
+
+	@Override
+	public boolean isActive(Guild guild) {
+		return managers.containsKey(guild);
+	}
 
 	@Override
 	public void load(Guild guild) {

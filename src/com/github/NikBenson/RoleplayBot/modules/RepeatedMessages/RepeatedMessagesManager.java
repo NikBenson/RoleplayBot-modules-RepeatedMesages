@@ -33,7 +33,7 @@ public class RepeatedMessagesManager implements JSONConfigured {
 
 	@Override
 	public File getConfigPath() {
-		return new File(ConfigurationManager.getInstance().getConfigurationRootPath(), ConfigurationPaths.REPEATED_MESSAGES_DIRECTORY);
+		return new File(ConfigurationManager.getInstance().getConfigurationRootPath(GUILD), ConfigurationPaths.REPEATED_MESSAGES_DIRECTORY);
 	}
 
 	@Override
