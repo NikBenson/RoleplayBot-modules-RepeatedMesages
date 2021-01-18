@@ -1,6 +1,5 @@
 package com.github.NikBenson.RoleplayBot.modules.RepeatedMessages;
 
-import com.github.NikBenson.RoleplayBot.commands.context.Context;
 import com.github.NikBenson.RoleplayBot.commands.context.GuildContext;
 import com.github.NikBenson.RoleplayBot.configurations.ConfigurationManager;
 import com.github.NikBenson.RoleplayBot.configurations.ConfigurationPaths;
@@ -21,7 +20,7 @@ import java.util.List;
 public class RepeatedMessagesManager implements JSONConfigured {
 	private final Guild GUILD;
 
-	List<RepeatedMessage> repeatedMessages = new LinkedList<>();
+	private List<RepeatedMessage> repeatedMessages = new LinkedList<>();
 
 	public RepeatedMessagesManager(Guild guild) {
 		GUILD = guild;
@@ -68,7 +67,7 @@ public class RepeatedMessagesManager implements JSONConfigured {
 			values[i] = (String) valuesJSON.get(i);
 		}
 
-		MessageFormatter<GuildContext> messageFormatter = new MessageFormatter<>(message, values);
+		MessageFormatter<GuildContext> messageFormatter = new MessageFormatter<>(GuildContext.class, message, values);
 		repeatedMessages.add(new RepeatedMessage(channel, messageFormatter, startAt, timeDelta));
 	}
 }
