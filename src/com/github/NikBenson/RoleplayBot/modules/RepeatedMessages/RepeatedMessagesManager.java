@@ -70,4 +70,9 @@ public class RepeatedMessagesManager implements JSONConfigured {
 		MessageFormatter<GuildContext> messageFormatter = new MessageFormatter<>(GuildContext.class, message, values);
 		repeatedMessages.add(new RepeatedMessage(channel, messageFormatter, startAt, timeDelta));
 	}
+
+	@Override
+	public Guild getGuild() {
+		return GUILD;
+	}
 }

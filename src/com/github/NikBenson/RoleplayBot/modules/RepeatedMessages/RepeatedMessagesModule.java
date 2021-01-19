@@ -36,4 +36,9 @@ public class RepeatedMessagesModule implements RoleplayBotModule {
 	public void unload(Guild guild) {
 		managers.remove(guild);
 	}
+
+	@Override
+	public Guild[] getLoaded() {
+		return managers.keySet().toArray(new Guild[0]);
+	}
 }
