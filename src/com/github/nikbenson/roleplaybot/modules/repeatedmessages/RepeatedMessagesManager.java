@@ -1,4 +1,4 @@
-package com.github.nikbenson.roleplaybot.modules.RepeatedMessages;
+package com.github.nikbenson.roleplaybot.modules.repeatedmessages;
 
 import com.github.nikbenson.roleplaybot.commands.context.GuildContext;
 import com.github.nikbenson.roleplaybot.configurations.ConfigurationManager;
