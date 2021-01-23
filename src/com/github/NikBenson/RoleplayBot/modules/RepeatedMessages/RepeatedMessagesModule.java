@@ -1,7 +1,7 @@
-package com.github.NikBenson.RoleplayBot.modules.RepeatedMessages;
+package com.github.nikbenson.roleplaybot.modules.RepeatedMessages;
 
-import com.github.NikBenson.RoleplayBot.configurations.ConfigurationManager;
-import com.github.NikBenson.RoleplayBot.modules.RoleplayBotModule;
+import com.github.nikbenson.roleplaybot.configurations.ConfigurationManager;
+import com.github.nikbenson.roleplaybot.modules.RoleplayBotModule;
 import net.dv8tion.jda.api.entities.Guild;
 
 import java.util.HashMap;

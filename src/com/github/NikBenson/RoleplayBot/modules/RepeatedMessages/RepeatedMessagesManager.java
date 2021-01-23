@@ -1,10 +1,10 @@
-package com.github.NikBenson.RoleplayBot.modules.RepeatedMessages;
+package com.github.nikbenson.roleplaybot.modules.RepeatedMessages;
 
-import com.github.NikBenson.RoleplayBot.commands.context.GuildContext;
-import com.github.NikBenson.RoleplayBot.configurations.ConfigurationManager;
-import com.github.NikBenson.RoleplayBot.configurations.ConfigurationPaths;
-import com.github.NikBenson.RoleplayBot.configurations.JSONConfigured;
-import com.github.NikBenson.RoleplayBot.messages.MessageFormatter;
+import com.github.nikbenson.roleplaybot.commands.context.GuildContext;
+import com.github.nikbenson.roleplaybot.configurations.ConfigurationManager;
+import com.github.nikbenson.roleplaybot.configurations.ConfigurationPaths;
+import com.github.nikbenson.roleplaybot.configurations.JSONConfigured;
+import com.github.nikbenson.roleplaybot.messages.MessageFormatter;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
 import org.json.simple.JSONArray;
